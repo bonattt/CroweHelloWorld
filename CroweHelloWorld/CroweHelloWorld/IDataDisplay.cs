@@ -8,6 +8,6 @@ namespace CroweHelloWorld
 {
     interface IDataDisplay
     {
-        void DisplayLine();
+        void DisplayLine(string msg);
     }
 }
