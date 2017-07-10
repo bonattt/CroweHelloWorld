@@ -30,5 +30,10 @@ namespace CroweHelloWorld
             }
             return _lines[_index++];
         }
+
+        public void Reset()
+        {
+            _index = 0;
+        }
     }
 }
