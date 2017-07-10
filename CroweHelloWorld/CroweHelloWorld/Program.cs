@@ -10,6 +10,9 @@ namespace CroweHelloWorld
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello World");
+            Console.WriteLine("press enter to exit!");
+            Console.ReadLine();
         }
     }
 }
