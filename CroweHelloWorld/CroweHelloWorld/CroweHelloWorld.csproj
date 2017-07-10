@@ -44,6 +44,7 @@
     <Compile Include="ConsoleDisplay.cs" />
     <Compile Include="IDataDisplay.cs" />
     <Compile Include="IDataSource.cs" />
+    <Compile Include="ListDataSource.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

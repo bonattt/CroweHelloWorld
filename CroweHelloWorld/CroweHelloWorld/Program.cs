@@ -11,8 +11,16 @@ namespace CroweHelloWorld
         static void Main(string[] args)
         {
             IDataDisplay display = new ConsoleDisplay();
-            display.DisplayLine("Hello World");
-            display.DisplayLine("press enter to exit!");
+
+            List<string> lines = new List<string>(new string[] { "hello world", "press enter to exit!"});
+            IDataSource dataSrc = new ListDataSource(lines);
+
+            string data = dataSrc.NextLine();
+            while(data != null) {
+                display.DisplayLine(data);
+                data = dataSrc.NextLine();
+            }
+            // Wait to exit
             Console.ReadLine();
         }
     }
