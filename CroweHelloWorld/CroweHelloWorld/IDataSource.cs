@@ -13,6 +13,6 @@ namespace CroweHelloWorld
         string NextLine();
 
         // Resets the Datasource to the beginning
-        string Reset();
+        void Reset();
     }
 }
