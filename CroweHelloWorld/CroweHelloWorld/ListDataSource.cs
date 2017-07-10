@@ -8,32 +8,27 @@ namespace CroweHelloWorld
 {
     class ListDataSource : IDataSource
     {
-        private string[] _lines;
-        private int _index;
+        private List<string> _lines;
 
         public ListDataSource(List<string> lines)
         {
-            _lines = new string[lines.Count];
+            _lines = new List<string>();
             // create shallow copy to avoid external mutation of the list.
             for (int i = 0; i < lines.Count; i++)
             {
-                _lines[i] = lines[i];
+                _lines.Add(lines[i]);
             }
-            _index = 0;
         }
 
-        public string NextLine()
+        public string ReadData(string arg)
         {
-            if (_index >= _lines.Length)
-            {
-                return null;
-            }
-            return _lines[_index++];
+            int index = int.Parse(arg);
+            return _lines[index];
         }
 
-        public void Reset()
+        public void WriteData(string arg)
         {
-            _index = 0;
+            _lines.Add(arg);
         }
     }
 }

@@ -8,11 +8,10 @@ namespace CroweHelloWorld
 {
     interface IDataSource
     {
-        // Returns the next line of data from the source
-        // returns null if there is no more data to display
-        string NextLine();
+        // reads data based on the string arguement (ie. an SQL query)
+        string ReadData(string arg);
 
-        // Resets the Datasource to the beginning
-        void Reset();
+        // writes data to the data source based on the string argument (ie. an SQL query)
+        void WriteData(string arg);
     }
 }

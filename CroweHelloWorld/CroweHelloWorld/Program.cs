@@ -11,18 +11,19 @@ namespace CroweHelloWorld
         static void Main(string[] args)
         {
             IDataDisplay display = new ConsoleDisplay("press enter to exit", true);
-            
 
-            List<string> lines = new List<string>(new string[] { "hello world" });
+            // create dataSrc object
+            List<string> lines = new List<string>(new string[] { "hello world " });
             IDataSource dataSrc = new ListDataSource(lines);
+            dataSrc.WriteData("\n");
 
             display.InitDisplay();
-            string data = dataSrc.NextLine();
-            while(data != null) {
-                display.DisplayLine(data);
-                data = dataSrc.NextLine();
-            }
-            // Wait to exit
+
+            StringBuilder msg = new StringBuilder();
+            msg.Append(dataSrc.ReadData("0"));
+            msg.Append(dataSrc.ReadData("1"));
+            display.DisplayLine(msg.ToString());
+
             display.FinishDisplay();
         }
     }
